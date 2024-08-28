@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Heart Disease Prediction </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>Age:{{Age}}</p>
+      <p>CP Count:{{data_cp}}</p>
+      <p>Trestbps:{{data_bps}}</p>
+      <p>Cholestrol:{{data_chol}}</p>
+      <p>fbs_level:{{data_fbs}}</p>
+      <p>ECG level:{{data_ecg}}</p>
+      <br>
+      {% if out == 1 %}
+        <p>You <b>will have</b>  Heart Disease in the future: <b>Positive</b></p>
+      {% else %}
+        <p>You <b>will not</b> have  Heart Disease in the future:<b>Negetive</b></p>
+
+      {% endif %}
+
+    <a  href="{% url 'heartApp:heart' %}">Heart Disease Predicition</a>
+    <br>
+</div>
+{% endblock %}
